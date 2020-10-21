@@ -29,7 +29,7 @@ resource "alicloud_vpc" "vpc" {
 }
 
 resource "alicloud_vswitch" "public" {
-  count             = length(local.public_subnets)
+  count             = var.create_public_subnets ? length(local.public_subnets) : 0
   vpc_id            = alicloud_vpc.vpc.id
   cidr_block        = local.public_subnets[count.index]
   availability_zone = element(local.azs, count.index)
@@ -37,7 +37,7 @@ resource "alicloud_vswitch" "public" {
 }
 
 resource "alicloud_vswitch" "private" {
-  count             = length(local.private_subnets)
+  count             = var.create_private_subnets ? length(local.private_subnets) : 0
   vpc_id            = alicloud_vpc.vpc.id
   cidr_block        = local.private_subnets[count.index]
   availability_zone = element(local.azs, count.index)
