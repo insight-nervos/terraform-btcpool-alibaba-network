@@ -54,6 +54,9 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | bastion\_security\_group\_id | #### SGs #### |
+| private\_vswitch\_ids | n/a |
+| public\_vswitch\_ids | n/a |
+| vpc\_id | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
