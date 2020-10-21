@@ -7,5 +7,8 @@ provider "alicloud" {
 }
 
 module "defaults" {
-  source = "../.."
+  source   = "../.."
+  vpc_name = "example"
+  num_azs  = 2
+
 }
