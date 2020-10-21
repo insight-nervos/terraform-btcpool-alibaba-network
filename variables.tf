@@ -52,3 +52,8 @@ variable "bastion_sg_name" {
   default     = "bastion-sg"
 }
 
+variable "node_sg_name" {
+  description = "Name for the node security group"
+  type        = string
+  default     = "node-sg"
+}

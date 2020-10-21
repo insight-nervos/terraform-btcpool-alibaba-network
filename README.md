@@ -46,6 +46,7 @@ No requirements.
 | bastion\_sg\_name | Name for the bastion security group | `string` | `"bastion-sg"` | no |
 | cidr | The cidr range for network | `string` | `"10.0.0.0/16"` | no |
 | corporate\_ip | The corporate IP you want to restrict ssh traffic to | `string` | `""` | no |
+| node\_sg\_name | Name for the node security group | `string` | `"node-sg"` | no |
 | num\_azs | The number of AZs to deploy into | `number` | `0` | no |
 | vpc\_name | The name of the VPC | `string` | `""` | no |
 
@@ -54,6 +55,7 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | bastion\_security\_group\_id | #### SGs #### |
+| node\_security\_group\_id | n/a |
 | private\_vswitch\_ids | n/a |
 | public\_vswitch\_ids | n/a |
 | vpc\_id | n/a |
