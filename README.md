@@ -26,6 +26,41 @@ module "this" {
 No issue is creating limit on this module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| alicloud | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| all\_enabled | Bool to enable all the security groups | `bool` | `false` | no |
+| azs | List of availability zones | `list(string)` | `[]` | no |
+| bastion\_enabled | Boolean to enable a bastion host.  All ssh traffic restricted to bastion | `bool` | `false` | no |
+| bastion\_sg\_name | Name for the bastion security group | `string` | `"bastion-sg"` | no |
+| cidr | The cidr range for network | `string` | `"10.0.0.0/16"` | no |
+| corporate\_ip | The corporate IP you want to restrict ssh traffic to | `string` | `""` | no |
+| create\_private\_subnets | Bool to enable creation of private subnets | `bool` | `false` | no |
+| create\_public\_subnets | Bool to enable creation of public subnets | `bool` | `true` | no |
+| node\_sg\_name | Name for the node security group | `string` | `"node-sg"` | no |
+| num\_azs | The number of AZs to deploy into | `number` | `0` | no |
+| vpc\_name | The name of the VPC | `string` | `""` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| bastion\_security\_group\_id | #### SGs #### |
+| node\_security\_group\_id | n/a |
+| private\_vswitch\_ids | n/a |
+| public\_vswitch\_ids | n/a |
+| vpc\_id | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
