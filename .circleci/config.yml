@@ -25,4 +25,5 @@ workflows:
   default:
     jobs:
       - test
+        context: alicloud
   version: 2
