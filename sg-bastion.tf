@@ -5,7 +5,7 @@ resource "alicloud_security_group" "bastion-sg" {
   description = "Security group for bastion traffic"
 }
 
-resource "alicloud_security_group_rule" "ssh-in" {
+resource "alicloud_security_group_rule" "bastion-ssh-in" {
   count             = var.bastion_enabled ? 1 : 0
   type              = "ingress"
   ip_protocol       = "tcp"

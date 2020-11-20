@@ -4,7 +4,7 @@ resource "alicloud_security_group" "node-sg" {
   description = "Security group for node traffic"
 }
 
-resource "alicloud_security_group_rule" "ssh-in" {
+resource "alicloud_security_group_rule" "node-ssh-in" {
   count             = ! var.bastion_enabled ? 1 : 0
   type              = "ingress"
   ip_protocol       = "tcp"
