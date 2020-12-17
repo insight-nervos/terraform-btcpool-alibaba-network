@@ -5,7 +5,7 @@
 
 ## Features
 
-This module...
+This module sets up a network on Alibaba cloud for running a btcpool mining pool. Meant to be used with the associated [automated node deployment](https://github.com/insight-nervos/terraform-btcpool-alibaba-node). 
 
 ## Terraform Versions
 
@@ -26,10 +26,6 @@ module "this" {
 No issue is creating limit on this module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
-
-No requirements.
-
 ## Providers
 
 | Name | Version |
@@ -39,7 +35,7 @@ No requirements.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+|------|-------------|------|---------|:-----:|
 | all\_enabled | Bool to enable all the security groups | `bool` | `false` | no |
 | azs | List of availability zones | `list(string)` | `[]` | no |
 | bastion\_enabled | Boolean to enable a bastion host.  All ssh traffic restricted to bastion | `bool` | `false` | no |
@@ -50,6 +46,7 @@ No requirements.
 | create\_public\_subnets | Bool to enable creation of public subnets | `bool` | `true` | no |
 | node\_sg\_name | Name for the node security group | `string` | `"node-sg"` | no |
 | num\_azs | The number of AZs to deploy into | `number` | `0` | no |
+| public\_ports | List of publicly open ports | `list(number)` | <pre>[<br>  22,<br>  1800,<br>  8114,<br>  8115,<br>  9021,<br>  9090,<br>  3000<br>]</pre> | no |
 | vpc\_name | The name of the VPC | `string` | `""` | no |
 
 ## Outputs
