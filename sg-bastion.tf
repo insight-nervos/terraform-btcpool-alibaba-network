@@ -13,6 +13,6 @@ resource "alicloud_security_group_rule" "bastion-ssh-in" {
   policy            = "accept"
   port_range        = "22/22"
   priority          = 1
-  security_group_id = alicloud_security_group.bastion-sg.*.id
+  security_group_id = coalesce(join(",", alicloud_security_group.bastion-sg.*.id))
   cidr_ip           = "0.0.0.0/0"
 }

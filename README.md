@@ -5,7 +5,7 @@
 
 ## Features
 
-This module...
+This module sets up a network on Alibaba cloud for running a btcpool mining pool. Meant to be used with the associated [automated node deployment](https://github.com/insight-nervos/terraform-btcpool-alibaba-node). 
 
 ## Terraform Versions
 
@@ -50,6 +50,7 @@ No requirements.
 | create\_public\_subnets | Bool to enable creation of public subnets | `bool` | `true` | no |
 | node\_sg\_name | Name for the node security group | `string` | `"node-sg"` | no |
 | num\_azs | The number of AZs to deploy into | `number` | `0` | no |
+| public\_ports | List of publicly open ports | `list(number)` | <pre>[<br>  1800,<br>  8114,<br>  8115,<br>  9021,<br>  9090,<br>  3000<br>]</pre> | no |
 | vpc\_name | The name of the VPC | `string` | `""` | no |
 
 ## Outputs
